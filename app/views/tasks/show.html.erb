@@ -9,6 +9,15 @@
   <strong>Id:</strong>
   <%= @task.id %>
 </p>
-
+<table>
+    <% @task.sections.each do |section| %>
+      <tr>
+        <td><%= section.id %></td>
+        <td><input type="checkbox"></td>
+        <td><%= link_to section.section_title, section_path(id: section.id) %></td>
+        <td><%= section.due_time %></td>
+      </tr>
+    <% end %>
+  </table>
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', tasks_path %>

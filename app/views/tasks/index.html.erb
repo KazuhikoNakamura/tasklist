@@ -1,4 +1,4 @@
-<h1>Listing tasks</h1>
+<h1>タスクリスト</h1>
 
 <table>
   <thead>
@@ -14,7 +14,7 @@
   <tbody>
     <% @tasks.each do |task| %>
       <tr>
-        <td><%= task.title %></td>
+        <td><%= link_to task.title, task_path(id: task.id) %></td>
         <td><%= task.id %></td>
         <td><%= link_to 'Show', task %></td>
         <td><%= link_to 'Edit', edit_task_path(task) %></td>
