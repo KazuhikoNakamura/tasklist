@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Due time:</strong>
+  <%= @section.due_time %>
+</p>
+
+<p>
+  <strong>Contents:</strong>
+  <%= @section.contents %>
+</p>
+
+<p>
+  <strong>Task:</strong>
+  <%= @section.task_id %>
+</p>
+
+<p>
+  <strong>Section title:</strong>
+  <%= @section.section_title %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @section.status %>
+</p>
+
+<%= link_to 'Edit', edit_section_path(@section) %> |
+<%= link_to 'Back', sections_path %>
