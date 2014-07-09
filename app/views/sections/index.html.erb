@@ -1,13 +1,13 @@
-<h1>Listing sections</h1>
+<h1>全作業一覧</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Due time</th>
-      <th>Contents</th>
-      <th>Task</th>
-      <th>Section title</th>
-      <th>Status</th>
+      <th>作業終了期限</th>
+      <th>作業内容</th>
+      <th>タスクのID</th>
+      <th>タスク名</th>
+      <th>作業の進捗</th>
       <th></th>
       <th></th>
       <th></th>
@@ -24,7 +24,7 @@
         <td><%= section.status %></td>
         <td><%= link_to 'Show', section %></td>
         <td><%= link_to 'Edit', edit_section_path(section) %></td>
-        <td><%= link_to 'Destroy', section, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '削除', section, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,6 @@
 
 <br>
 
-<%= link_to 'New Section', new_section_path %>
+<%= link_to '新しく作業を追加する', new_section_path %>
+<br><br>
+<%= link_to 'タスク一覧に戻る', tasks_path %>

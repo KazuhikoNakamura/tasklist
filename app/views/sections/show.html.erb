@@ -1,29 +1,32 @@
 <p id="notice"><%= notice %></p>
 
+<h2>
+  <strong>作業名</strong> : <%= @section.section_title %>
+</h2>
+
 <p>
-  <strong>Due time:</strong>
+  <strong>作業終了期限</strong>
+  <br>
   <%= @section.due_time %>
 </p>
 
 <p>
-  <strong>Contents:</strong>
+  <strong>作業内容</strong>
+  <br>
   <%= @section.contents %>
 </p>
 
 <p>
-  <strong>Task:</strong>
+  <strong>タスクのID</strong>
+  <br>
   <%= @section.task_id %>
 </p>
 
 <p>
-  <strong>Section title:</strong>
-  <%= @section.section_title %>
-</p>
-
-<p>
-  <strong>Status:</strong>
+  <strong>作業の進捗</strong>
+  <br>
   <%= @section.status %>
 </p>
 
-<%= link_to 'Edit', edit_section_path(@section) %> |
-<%= link_to 'Back', sections_path %>
+<%= link_to '編集する', edit_section_path(@section) %> |
+<%= link_to '各タスクの一覧に戻る', task_path(id: @section.task_id) %>

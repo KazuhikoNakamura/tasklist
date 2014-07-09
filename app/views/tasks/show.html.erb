@@ -1,9 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @task.title %>
-</p>
+<h1><%= @task.title %></h1>
 
 <p>
   <strong>Id:</strong>
@@ -19,5 +16,7 @@
       </tr>
     <% end %>
   </table>
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+  <br><br>
+<%#= link_to 'Edit', edit_task_path(@task) %><!-- |-->
+<%= link_to 'タスク一覧へ戻る', tasks_path %> |
+<%= link_to '作業を追加する', new_section_path %>

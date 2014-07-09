@@ -4,7 +4,7 @@
   <thead>
     <tr>
       <th>タスク名</th>
-      <th>タスクId</th>
+      <th>タスクのId</th>
       <th></th>
       <th></th>
       <th></th>
@@ -15,10 +15,10 @@
     <% @tasks.each do |task| %>
       <tr>
         <td><%= link_to task.title, task_path(id: task.id) %></td>
-        <td><%= task.id %></td>
-        <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td align="center"><%= task.id %></td>
+        <!--<td><%= link_to 'このタスクの作業一覧を見る', task %></td>-->
+        <td><%= link_to 'タスク名の変更', edit_task_path(task) %></td>
+        <td><%= link_to '削除', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
