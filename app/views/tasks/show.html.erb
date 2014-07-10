@@ -1,16 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= @task.title %></h1>
-
-<p>
-  <strong>Id:</strong>
-  <%= @task.id %>
-</p>
+<h1><%= @task.title %>&emsp;<span>(ID: <%= @task.id %> )</span></h1>
 <table>
     <% @task.sections.each do |section| %>
       <tr>
-        <td><%= section.id %></td>
-        <td><input type="checkbox"></td>
+        <th><%= section.id %></th>
+        <th><input type="checkbox"></th>
         <td><%= link_to section.section_title, section_path(id: section.id) %></td>
         <td><%= section.due_time %></td>
       </tr>
