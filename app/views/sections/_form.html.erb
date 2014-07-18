@@ -11,27 +11,30 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :due_time, "作業終了期限" %><br>
-    <%= f.time_select :due_time %>
-  </div>
-  <div class="field">
-    <%= f.label :contents, "作業内容" %><br>
-    <%= f.text_area :contents %>
-  </div>
-  <div class="field">
-    <%= f.label :task_id, "タスクのID" %><br>
-    <%= f.number_field :task_id %>
-  </div>
-  <div class="field">
-    <%= f.label :section_title, "作業名" %><br>
-    <%= f.text_field :section_title %>
-  </div>
-  <div class="field">
-    <%= f.label :status, "作業の進捗" %><br>
-    <%= f.check_box :status %>
-  </div>
+<table class="type2">
+  <tr>
+    <th><%= f.label :section_title, "作業名" %></th>
+    <td><strong><%= f.text_field :section_title %></strong></td>
+  </tr>
+  <tr>
+    <th><%= f.label :due_time, "終了期限" %></th>
+    <td><%= f.datetime_select :due_time %></td>
+  </tr>
+  <tr>
+    <th><%= f.label :contents, "作業内容" %></th>
+    <td><%= f.text_area :contents %></td>
+  </tr>
+  <tr>
+    <th><%= f.label :task_id, "タスクのID" %></th>
+    <td><%= f.number_field :task_id %></td>
+  </tr>
+  <tr>
+    <th><%= f.label :status, "進捗" %></th>
+    <td><%= f.check_box :status %></td>
+  </tr>
+</table>
+<br>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit '保存する' %>
   </div>
 <% end %>

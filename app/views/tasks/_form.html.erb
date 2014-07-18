@@ -11,11 +11,15 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
+
+<table class="type2">
+  <tr>
+    <th><%= f.label :title, 'タスク名' %></th>
+    <td><%= f.text_field :title %></td>
+  </tr>
+</table>
+<br>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit '保存する' %>
   </div>
 <% end %>

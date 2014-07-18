@@ -10,6 +10,7 @@ class SectionsController < ApplicationController
   # GET /sections/1
   # GET /sections/1.json
   def show
+     @task = Task.find(@section.task_id)
   end
 
   # GET /sections/new

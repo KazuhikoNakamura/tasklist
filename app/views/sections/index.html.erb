@@ -17,7 +17,7 @@
   <tbody>
     <% @sections.each do |section| %>
       <tr>
-        <td><%= section.due_time %></td>
+        <td><%= section.due_time.strftime('%Y年%m月%d日 %H:%M') %></td>
         <td><%= section.contents %></td>
         <td><%= section.task_id %></td>
         <td><%= section.section_title %></td>
