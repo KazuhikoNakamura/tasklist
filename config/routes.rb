@@ -5,6 +5,8 @@ Tasklist::Application.routes.draw do
 
   root 'tasks#index'
 
+  get 'sections/:id/toggle_status' => 'sections#toggle_status', as: "sections_toggle_status"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

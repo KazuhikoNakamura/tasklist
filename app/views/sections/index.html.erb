@@ -8,7 +8,7 @@
     </tr>
     <tr>
       <th>作業内容</th>
-      <th>ID</th>
+      <th>タスクID</th>
       <th>進捗</th>
       <th></th>
     </tr>
@@ -23,7 +23,13 @@
       <tr>
         <td><%= section.contents %></td>
         <td><%= section.task_id %></td>
-        <td><%= section.status %></td>
+        <td>
+          <% if section.status %>
+            済
+          <% else %>
+            未
+          <% end %>
+        </td>
         <td><%= link_to 'Show', section %><br><%= link_to 'Edit', edit_section_path(section) %><br><%= link_to '削除', section, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

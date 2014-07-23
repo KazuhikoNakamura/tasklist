@@ -1,5 +1,5 @@
 class SectionsController < ApplicationController
-  before_action :set_section, only: [:show, :edit, :update, :destroy]
+  before_action :set_section, only: [:show, :edit, :update, :destroy, :toggle_status]
 
   # GET /sections
   # GET /sections.json
@@ -16,10 +16,12 @@ class SectionsController < ApplicationController
   # GET /sections/new
   def new
     @section = Section.new
+    @tasks = Task.all
   end
 
   # GET /sections/1/edit
   def edit
+    @tasks = Task.all
   end
 
   # POST /sections
@@ -55,9 +57,28 @@ class SectionsController < ApplicationController
   # DELETE /sections/1
   # DELETE /sections/1.json
   def destroy
+    task = @section.task
     @section.destroy
     respond_to do |format|
-      format.html { redirect_to sections_url }
+      format.html { redirect_to task }
+      # format.html { redirect_to task_path(id: task) }
+      format.json { head :no_content }
+    end
+  end
+
+  def toggle_status
+    task = @section.task
+    if @section.status
+      @section.status = false
+    else
+      @section.status = true
+    end
+
+    @section.save
+
+    respond_to do |format|
+      format.html { redirect_to task }
+      # format.html { redirect_to task_path(id: task) }
       format.json { head :no_content }
     end
   end

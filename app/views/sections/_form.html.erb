@@ -26,7 +26,10 @@
   </tr>
   <tr>
     <th><%= f.label :task_id, "タスクのID" %></th>
-    <td><%= f.number_field :task_id %></td>
+    <td>
+      <%= f.collection_select :task_id, @tasks, :id, :title %>
+    </td>
+
   </tr>
   <!--<tr>
     <th><%= f.label :status, "進捗" %></th>

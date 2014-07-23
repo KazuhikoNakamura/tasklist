@@ -5,9 +5,16 @@
     <% @task.sections.each do |section| %>
       <tr>
         <th><%= section.id %></th>
-        <th><%= check_box_tag true,true %></th>
+        <th>
+          <% if section.status %>
+            <%= link_to "未達成にする", sections_toggle_status_path(id: section.id) %>
+          <% else %>
+            <%= link_to "達成にする", sections_toggle_status_path(id: section.id) %>
+          <% end %>
+        <!-- <th><%= check_box_tag "section[status]", !section.status, section.status %></th> -->
         <td><%= link_to section.section_title, section_path(id: section.id) %></td>
         <td><%= section.due_time %></td>
+        <td><%= link_to '削除', section_path(id: section.id), method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
       </tr>
     <% end %>
   </table>
