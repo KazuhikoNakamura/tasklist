@@ -5,7 +5,7 @@
     <% @task.sections.each do |section| %>
       <tr>
         <th><%= section.id %></th>
-        <th><input type="checkbox"></th>
+        <th><%= check_box_tag true,true %></th>
         <td><%= link_to section.section_title, section_path(id: section.id) %></td>
         <td><%= section.due_time %></td>
       </tr>

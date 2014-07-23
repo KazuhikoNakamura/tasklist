@@ -18,7 +18,7 @@
   </tr>
   <tr>
     <th><%= f.label :due_time, "終了期限" %></th>
-    <td><%= f.datetime_select :due_time %></td>
+    <td><%= f.datetime_select :due_time ,:use_month_numbers => true %></td>
   </tr>
   <tr>
     <th><%= f.label :contents, "作業内容" %></th>
@@ -28,10 +28,10 @@
     <th><%= f.label :task_id, "タスクのID" %></th>
     <td><%= f.number_field :task_id %></td>
   </tr>
-  <tr>
+  <!--<tr>
     <th><%= f.label :status, "進捗" %></th>
     <td><%= f.check_box :status %></td>
-  </tr>
+  </tr>-->
 </table>
 <br>
   <div class="actions">

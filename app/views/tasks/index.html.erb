@@ -17,7 +17,7 @@
         <td><%= link_to task.title, task_path(id: task.id) %></td>
         <td align="center"><%= task.id %></td>
         <!--<td><%= link_to 'このタスクの作業一覧を見る', task %></td>-->
-        <td><%= link_to '名称変更', edit_task_path(task) %></td>
+        <td><%= link_to 'タスク名変更', edit_task_path(task) %></td>
         <td><%= link_to '削除', task, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
       </tr>
     <% end %>

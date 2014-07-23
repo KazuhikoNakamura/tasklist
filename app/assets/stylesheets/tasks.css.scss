@@ -71,3 +71,16 @@ p#notice {
   margin: 0;
   color:#f00;
 }
+.sumi {
+  background:rgba(150,150,150,.4);
+  color:#999 !important;
+}
+tr.sumi td a {
+  color:#999;
+}
+tr.sumi th {
+  color:#ccc;
+}
+.sectionTitle {
+  font-weight: bold;
+}
